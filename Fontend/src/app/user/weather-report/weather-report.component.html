@@ -1,0 +1,80 @@
+<div class="flex flex-wrap items-center justify-center p-4 bg-cover bg-center"
+     style="background-image: url('https://images.unsplash.com/photo-1585594219497-c16198d7792f?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            background-size: cover; 
+            background-position: center;">
+    <!-- Location Details -->
+    <div class="w-full text-center p-4 text-white">
+        <div class="text-2xl font-bold">Weather in {{ weatherData.name }}, {{ weatherData.sys.country }}</div>
+        <div class="text-lg">{{ weatherData.coord.lat }}°N, {{ weatherData.coord.lon }}°E</div>
+    </div>
+    
+    <!-- Temperature -->
+    <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="relative h-24 md:h-48 flex flex-col items-center justify-center p-2 rounded-lg shadow-lg"
+             style="background-image: url('https://images.unsplash.com/photo-1585594219497-c16198d7792f?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div class="relative z-10 text-white text-center">
+                <div class="text-lg font-semibold">Temperature</div>
+                <div class="text-xl mt-1">{{ weatherData.main.temp - 273.15 | number:'1.0-0' }}°C</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weather Description -->
+    <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="relative h-24 md:h-48 flex flex-col items-center justify-center p-2 rounded-lg shadow-lg"
+             style="background-image: url('https://images.unsplash.com/photo-1561470508-fd4df1ed90b2?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div class="relative z-10 text-white text-center">
+                <div class="text-lg font-semibold">Weather Description</div>
+                <div class="text-xl mt-1">{{ weatherData.weather[0].description | titlecase }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Humidity -->
+    <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="relative h-24 md:h-48 flex flex-col items-center justify-center p-2 rounded-lg shadow-lg"
+             style="background-image: url('https://plus.unsplash.com/premium_photo-1671816261720-02d6f60148eb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div class="relative z-10 text-white text-center">
+                <div class="text-lg font-semibold">Humidity</div>
+                <div class="text-xl mt-1">{{ weatherData.main.humidity }}%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pressure -->
+    <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="relative h-24 md:h-48 flex flex-col items-center justify-center p-2 rounded-lg shadow-lg"
+             style="background-image: url('https://plus.unsplash.com/premium_photo-1681488438358-2f7872440e18?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div class="relative z-10 text-white text-center">
+                <div class="text-lg font-semibold">Pressure</div>
+                <div class="text-xl mt-1">{{ weatherData.main.pressure }} hPa</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wind Speed -->
+    <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="relative h-24 md:h-48 flex flex-col items-center justify-center p-2 rounded-lg shadow-lg"
+             style="background-image: url('https://plus.unsplash.com/premium_photo-1661948700015-bb81e8124974?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div class="relative z-10 text-white text-center">
+                <div class="text-lg font-semibold">Wind Speed</div>
+                <div class="text-xl mt-1">{{ weatherData.wind.speed }} m/s</div>
+            </div>
+        </div>
+    </div>
+</div>

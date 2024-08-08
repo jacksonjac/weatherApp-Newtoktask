@@ -1,0 +1,58 @@
+<div class="container mx-auto p-2">
+  <form (ngSubmit)="uploadFile()" class="bg-white shadow-md rounded-lg p-2 mb-2">
+    <div class="">
+      <label for="fileUpload" class="block text-gray-700 text-lg font-medium">Select Excel File</label>
+      <input
+        type="file"
+        id="fileUpload"
+        (change)="onFileChange($event)"
+        accept=".xlsx, .xls"
+        class="mt-2 w-full border border-gray-300 rounded-md p-2"
+      />
+    </div>
+    
+    <button
+      type="submit"
+      [disabled]="!file"
+      class="bg-blue-600 text-white w-full  py-2 rounded-md shadow-md hover:bg-blue-700 transition ease-in-out duration-200"
+    >
+      Upload
+    </button>
+  </form>
+  
+  <div class="bg-white shadow-md rounded-lg p-2">
+    <h2 class="text-2xl font-semibold mb-2 text-center">All Locations</h2>
+  
+    <!-- Container div for scrolling -->
+    <div class="table-container">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+        <thead>
+          <tr class="bg-gray-100 border-b">
+            <th class="py-2 px-4 text-left text-gray-700">Country</th>
+            <th class="py-2 px-4 text-left text-gray-700">State</th>
+            <th class="py-2 px-4 text-left text-gray-700">District</th>
+            <th class="py-2 px-4 text-left text-gray-700">City</th>
+            <th class="py-2 px-4 text-center text-gray-700">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations" class="border-b">
+            <td class="py-2 px-4">{{ location.country }}</td>
+            <td class="py-2 px-4">{{ location.state }}</td>
+            <td class="py-2 px-4">{{ location.district }}</td>
+            <td class="py-2 px-4">{{ location.city }}</td>
+            <td class="py-2 px-4 text-center">
+              <button
+              (click)="viewReport(location)"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition ease-in-out duration-200"
+              >
+                View Report
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

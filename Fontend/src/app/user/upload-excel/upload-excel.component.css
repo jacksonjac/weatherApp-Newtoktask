@@ -1,0 +1,18 @@
+.table-container {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+    border: 1px solid #e2e8f0; /* Optional: border for better visibility */
+  }
+  
+  /* Optional: Make the table header sticky */
+  .table-container thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f1f5f9;
+    z-index: 1;
+  }
+  
+  /* Optional: Customize the scrollbar */
+  .table-container::-webkit-scrollbar {
+    width: 8px;
+  }
